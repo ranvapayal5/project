@@ -1,0 +1,1054 @@
+
+
+ /* General Reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #6d4c03;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+ header nav button {
+    padding: 10px 20px;
+    background-color: whitesmoke; 
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   
+    margin-left: 10px; /* Add space between the buttons */
+}
+/* Normal Navbar Style */
+ header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+   
+}
+
+header nav ul li {
+    padding: 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 🟢 Logged-in User Style */
+header .logged-in {
+     /* Blue background for logged-in users */
+    font-weight: bold;
+}
+
+header .logged-in a {
+    color: white;
+}
+/* 🟢 "Logged in as" text styling */
+ header .logged-in p {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px;
+    margin-top: -10px;
+}
+header, footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section with Background Image */
+#home {
+    background-image: url('../images/bg4.jpg'); /* Path to your image */
+    background-size: cover;  /* Ensures the image covers the whole section */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Ensures the image doesn't repeat */
+    color: black;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;  /* Added to ensure overlay works correctly */
+}
+
+#home h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: -200px;
+    text-transform: uppercase;
+}
+
+#home p {
+    margin-top: 2px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#home .cta-button {
+    padding: 15px 30px;
+    background-color: #6d4c03;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border-radius: 40px
+}
+#home .cta-button:hover {
+    background-color:#ff9900;
+}
+
+/* Optional: Adding an overlay to improve text readability */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+    z-index: -1;
+}
+
+/* Other sections (Make sure no section causes overflow) */
+.page-section {
+    padding: 50px 20px;
+    box-sizing: border-box;
+    width: 100%;
+   
+}
+
+/* Ensure no section has excessive width */
+.page-section > * {
+    max-width: 100%; /* Prevent children from exceeding 100% width */
+}
+
+
+
+
+
+/* Pet Listing Section */
+#pet-listing {
+    padding: 50px 20px;
+    background-color: #f5f5f5; /* Light background for the section */
+    text-align: center;
+    background-image: url(../images/pattern4.png);
+}
+
+#pet-listing h2 {
+    font-size: 36px;
+    color: black;
+    margin-bottom: 0px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Filter Section Styling */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.filters select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+    width: 200px;
+}
+/* Pet Card Adopt Me Button Styling */
+.pet-card .adopt-button {
+   
+    color:black; /* White text */
+    padding: 12px 24px; /* Top and bottom padding of 12px, left and right padding of 24px */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 15px; /* Font size */
+    font-weight: bold; /* Make text bold */
+    text-decoration: underline;
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 2px; /* Add space at the top */
+}
+
+.adopt-button:hover {
+    background-color: rgba(165, 108, 42, 0.756);
+}
+
+
+/* Pet Cards Container */
+.pet-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 600px; /* Limits height for vertical scrolling */
+    padding: 20px;
+    background-color: #ffffff; /* Subtle background for better contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Pet Card Styling */
+.pet-card {
+    background-color: #ece5e5;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    width: 100%; /* Ensures consistent width */
+    max-width: 280px; /* Standardizes card size */
+}
+
+
+
+/* Image Styling */
+.pet-card img {
+    width: 100%;
+    height: 200px; /* Ensures all images have the same height */
+    object-fit: cover; /* Crops images uniformly */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Info Section Styling */
+.pet-info {
+    padding: 20px;
+    text-align: center;
+    background-color: #fdfdfd;
+    border-top: 2px solid #f4f4f4;
+}
+
+.pet-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.pet-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* Add scrollbar styling */
+.pet-cards::-webkit-scrollbar {
+    width: 8px;
+}
+.pet-cards::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 8px;
+}
+.pet-cards::-webkit-scrollbar-thumb:hover {
+    background-color: #b3b3b3;
+}
+
+
+
+
+
+/* Apply for volunteer Section */
+    #apply {
+        background-color: #f8f8f8;
+        padding: 50px 0;
+        text-align: center;
+        
+    }
+#apply .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#apply h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+#apply h4 {
+   
+    color: #333;
+    margin-bottom: 5px;
+}
+form select{
+width: 100%;
+padding: 12px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 14px;}
+#apply p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 0px;
+}
+
+#apply .form-group  {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#apply label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+#apply input,
+#apply textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+#apply textarea {
+    resize: vertical;
+}
+
+#apply input:focus,
+#apply textarea:focus {
+    border-color: #b37e2e;
+    outline: none;
+}
+
+.submit-btn {
+    background-color:#6d4c03;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+/* Footer Section */
+
+#footer {
+    background-color:#6d4c03;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+   
+    width: 100%;
+}
+
+#footer .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-bottom: 2px;
+   
+}
+
+#footer p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: white;
+}
+
+
+
+#footer .social-icon img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+/* Adoption Process Section Styling */
+#adoption-process {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#adoption-process h2 {
+    font-size: 36px;
+    color: black; /* Green color */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#adoption-process p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Process Steps */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Individual Step */
+.step {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+    margin-bottom: 20px;
+}
+
+.step-icon img {
+    width: 60px; /* Adjust icon size */
+    height: 60px;
+    object-fit: cover; /* Ensures images fit well */
+}
+
+.step h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.6;
+}
+
+
+
+/*model stying*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styling inside Modal */
+#adopt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#adopt-form input,
+#adopt-form textarea {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#adopt-form button {
+    padding: 10px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#adopt-form button:hover {
+    background-color: #eebc70;
+}
+
+/*login& signup model*/
+/* General Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Enable scrolling for smaller screens */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Form Elements */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: rgba(165, 42, 42, 0.519);
+}
+
+
+
+/* FAQ Section */
+.faq-section {
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.faq-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+   
+}
+.faq-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 100px rgba(203, 6, 6, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+.question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.answer {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+.faq-item.open .answer {
+    max-height: 200px;
+    opacity: 1;
+}
+
+
+
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    margin-left: 20px;
+}
+
+.gallery-section h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.gallery-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Gallery Wrapper */
+.gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Gallery Item Hover Effect */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover .gallery-img {
+    opacity: 0.8;
+}
+
+/* Overlay Text */
+.gallery-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+
+/* Events Section Styling */
+.events-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    background-image: url(../images/pattern7.png);
+}
+
+.events-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.events-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Scrollable Event Cards Container */
+.event-cards-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Horizontal scrolling enabled */
+    padding-bottom: 10px;
+    scrollbar-width: thin; /* Firefox: Thin scrollbar */
+    scrollbar-color: #ccc #f9f9f9; /* Scrollbar thumb and track color */
+}
+
+.event-cards-scroll::-webkit-scrollbar {
+    height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.event-cards-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.event-cards-scroll::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+
+/* Individual Event Card */
+.event-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding: 20px;
+    min-width: 300px; /* Ensures consistent card width */
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.event-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+
+/* Gallery Section */
+.gallery-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+/* Gallery Wrapper */
+.gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 30px; /* space between images */
+    max-height: 600px; /* Optional: Set a max height for the scrollable section */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding-right: 20px; /* To give space when scrolling vertically */
+}
+
+/* Individual Gallery Item */
+.gallery-item {
+    position: relative;
+    height: 300px; /* Fixed height for each item */
+    overflow: hidden; /* Ensures overlay text is not visible outside */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%; /* Make image fill its container */
+    object-fit: cover; /* Ensures images are cropped to fill the area */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Overlay Styles */
+.gallery-overlay {
+    position: absolute;
+    top: 50%;  /* Center the overlay vertically */
+    left: 50%; /* Center the overlay horizontally */
+    transform: translate(-50%, -50%); /* Adjusts position to truly center it */
+    width: 90%; /* Optional: set width of overlay */
+    height: 90%; /* Optional: set height of overlay */
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px; /* Add some padding for readability */
+}
+
+
+
+
+/*divider styling*/
+.divider {
+  
+    margin: 0 auto; /* Centers the image */
+    width: 100%; /* Makes the image stretch across the screen */
+    max-width: 100%; /* Prevents the image from getting too large */
+    height: 100px;
+    display: block; 
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/*      PETNEST AI ASSISTANT     */
+/* ============================= */
+
+#ai-assistant {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    z-index: 9999;
+}
+
+/* Floating Button */
+#ai-toggle {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: #d3a748;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#ai-toggle:hover {
+    transform: scale(1.08);
+}
+
+/* Chat Box */
+#ai-chatbox {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 75px;
+    width: 330px;
+    height: 450px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Header */
+#ai-header {
+    height: 55px;
+    background: #6d4c03;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#ai-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Messages */
+#ai-messages {
+    height: 335px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f8f8f8;
+}
+
+.ai-message {
+    max-width: 80%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.ai-message.bot {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.ai-message.user {
+    background: #6d4c03;
+    color: white;
+    margin-left: auto;
+}
+
+/* Input Area */
+#ai-input-area {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+    background: white;
+    border-top: 1px solid #ddd;
+}
+
+#ai-input {
+    flex: 1;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0 15px;
+    outline: none;
+    font-size: 14px;
+}
+
+#ai-input:focus {
+    border-color: #6d4c03;
+}
+
+#ai-input-area button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #6d4c03;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+
+    #ai-assistant {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    #ai-chatbox {
+        width: 300px;
+        height: 430px;
+    }
+
+}
+

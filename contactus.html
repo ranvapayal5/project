@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - PetNest Adoption</title>
+   
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        /* NGO Details */
+        .ngo-details {
+            background: #fff;
+            padding: 15px;
+            margin: 15px auto;
+            width: 60%;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .ngo-details h2 {
+            color: #8B5E3C;
+        }
+
+        /* Flexbox Layout for Form & NGO Image */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 10px;
+            width: 65%;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Form */
+        .contact-form, .ngo-image-container {
+            background: white;
+            padding: 20px;
+            border-radius: 70px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .contact-form h2, .ngo-image-container h2 {
+            color: #8B5E3C;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 90%;
+            max-width: 450px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: #8B5E3C;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background: #6d452d;
+        }
+
+        /* NGO Image Styling */
+        .ngo-image-container img {
+            width: 70%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        
+
+        /* Footer Section */
+footer {
+    background-color: #6d4c03;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 0;
+}
+
+
+
+/* Header */
+header {
+    background-color: #6d4c03;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+nav button {
+    padding: 10px 20px;
+    background-color: whitesmoke; 
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   
+    margin-left: 10px; /* Add space between the buttons */
+}
+header nav ul {
+    list-style: none;
+    padding: 15px;
+    margin-bottom:2px ;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+   
+       
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dashboard.jsp#home" class="nav-link">Home</a></li>
+                <li><a href="dashboard.jsp#pet-listing" class="nav-link">Browse Pets</a></li>
+                <li><a href="dashboard.jsp#apply" class="nav-link"> Volunteer</a></li>
+                <li><a href="dashboard.jsp#events" class="nav-link">Events</a></li>
+                <li><a href="dashboard.jsp#gallery" class="nav-link">Gallary</a></li>
+                <li><a href="adopt.html">How to Adopt</a></li>
+                <li><a href="sucess.html">Success Stories</a></li>
+                <li><a href="about.html" >About Us</a></li>
+                <li><a href="contactus.html" >Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+        
+    <main>
+        <section class="ngo-details">
+            <h2>Our NGO Details</h2>
+            <p><strong>Name:</strong> PetNest Adoption Center</p>
+            <p><strong>Address:</strong> 12, Green Valley Road, Vivekanand West, Junagadh, Gujarat - 362001</p>
+            <p><strong>Email:</strong> contact@PetNest.org</p>
+            <p><strong>Phone:</strong> 0285 224687</p>
+            <p><strong>Working Hours:</strong> Mon-Sat, 9 AM - 6 PM</p>
+        </section>
+        
+        <div class="contact-container">
+            <section class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form  action="process_contactus.jsp" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+            
+            <section class="ngo-image-container">
+                <h2>Our NGO</h2>
+                <img src="images/center.jpg" alt="Happy Paws Adoption Center">
+            </section>
+        </div>
+    </main>
+    
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 PetNest. All rights reserved. Made with ❤️ by Payal  </p>
+           
+        </div>
+    </footer>
+</body>
+</html>

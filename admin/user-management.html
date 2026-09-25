@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+  <div class="admin-panel">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="manage-pets.html">Manage Pets</a></li>
+        <li><a href="manage-events.html">Manage Events</a></li>
+        <li><a href="manage-adoptions.html">Manage Adoption Applications</a></li>
+        <li><a href="user-management.html">User Management</a></li>
+        <li><a href="gallery-management.html">Gallery Management</a></li>
+      </ul>
+    </nav>
+
+    <section id="user-management" class="admin-section">
+        <h1>User Management</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example User Row -->
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>jane.smith@example.com</td>
+                    <td>Logged In</td>
+                    <td>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+      
+      
+  </div>
+</body>
+</html>

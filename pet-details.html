@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <!-- Pet Details Section -->
+    <section class="pet-details">
+        <button class="back-button" onclick="window.history.back()">Back</button>
+    
+        <div class="pet-info" id="pet-info">
+            <!-- Pet Info will be dynamically added here -->
+        </div>
+    </section>
+    
+    <script>
+        // On page load, retrieve the pet details from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const pet = JSON.parse(localStorage.getItem('selectedPet'));
+
+            if (pet) {
+                // Dynamically insert pet details into the page
+                const petInfoDiv = document.getElementById('pet-info');
+                petInfoDiv.innerHTML = `
+                    <img src="${pet.image}" alt="${pet.name}">
+                    <h2>${pet.name}</h2>
+                    <p>Breed: ${pet.breed}</p>
+                    <p>Age: ${pet.age}</p>
+                    <p>Description: ${pet.description}</p>
+                   
+                    <a href="adopt_form.html" class="adopt-button">Adopt ${pet.name}</a>
+                `;
+            } else {
+                console.error("No pet data found in localStorage.");
+            }
+        });
+    </script>
+
+</body>
+</html>

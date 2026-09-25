@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#pet-listing" class="nav-link">Browse Pets</a></li>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
+            <li><a href="#apply" class="nav-link">Apply for Adoption</a></li>
+            <!-- Buttons to Open Modals -->
+            <button onclick="openModal('login-modal')">Login</button>
+            <button onclick="openModal('signup-modal')">Sign Up</button>
+
+        </ul>
+    </nav>
+</header>
+
+
+
+
+<!-- Home Section -->
+<section id="home" class="page-section">
+    <h2>Welcome to Pet Adoption</h2>
+    <p>Your one-stop destination to find and adopt your next best friend.</p>
+    <a href="#pet-listing" class="cta-button">Browse Pets</a>
+</section>
+
+
+<!-- Pet Listings Section -->
+<section id="pet-listing">
+    <h2>Available Pets for Adoption</h2>
+    
+    <!-- Filter Bar -->
+  
+        
+        <div class="filters">
+            <select id="pet-type">
+                <option value="all">All Pets</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+            </select>
+    
+            <select id="age-range">
+                <option value="all">All Ages</option>
+                <option value="puppy">Puppy</option>
+                <option value="adult">Adult</option>
+                <option value="senior">Senior</option>
+            </select>
+        </div>
+    
+        <div class="pet-cards">
+            <!-- Pet Card 1 -->
+            <div class="pet-card" data-type="dog" data-age="adult">
+                <img src="images/dog1.jpg" alt="Buddy the Dog">
+                <div class="pet-info">
+                    <h3>Buddy</h3>
+                    <p>Breed: Labrador Retriever</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="viewPetDetails('buddy')">View Details</button>
+                </div>
+            </div>
+    
+            <!-- Pet Card 2 -->
+            <div class="pet-card" data-type="cat" data-age="puppy">
+                <img src="images/cat1.jpg" alt="Whiskers the Cat">
+                <div class="pet-info">
+                    <h3>Whiskers</h3>
+                    <p>Breed: Maine Coon</p>
+                    <p>Age: Puppy</p>
+                    <button class="adopt-button" onclick="viewPetDetails('whiskers')">View Details</button>
+                </div>
+            </div>
+    
+            <!-- Pet Card 3 -->
+            <div class="pet-card" data-type="dog" data-age="senior">
+                <img src="images/dog2.jpg" alt="Rocky the Dog">
+                <div class="pet-info">
+                    <h3>Rocky</h3>
+                    <p>Breed: German Shepherd</p>
+                    <p>Age: Senior</p>
+                    <button class="adopt-button" onclick="openAdoptModal('rocky')">Adopt Me</button>
+                </div>
+            </div>
+    
+            <!-- Pet Card 4 -->
+            <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/bird1.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+
+             <!-- Pet Card 4 -->
+             <div class="pet-card" data-type="cat" data-age="adult">
+                <img src="images/cat2.jpg" alt="Oreo the cat">
+                <div class="pet-info">
+                    <h3>Oreo</h3>
+                    <p>Breed: Cat</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('Oreo')">Adopt Me</button>
+                </div>
+            </div>
+
+             <!-- Pet Card 4 -->
+             <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/dog3.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+
+             <!-- Pet Card 4 -->
+             <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/bird2.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+
+             <!-- Pet Card 4 -->
+             <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/cat3.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+
+             <!-- Pet Card 4 -->
+             <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/bird3.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+
+            <!-- Pet Card 4 -->
+            <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/dog4.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+
+            <!-- Pet Card 4 -->
+            <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/cat4.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+
+            <!-- Pet Card 4 -->
+            <div class="pet-card" data-type="bird" data-age="adult">
+                <img src="images/bird4.jpg" alt="Sunny the Bird">
+                <div class="pet-info">
+                    <h3>Sunny</h3>
+                    <p>Breed: Parrot</p>
+                    <p>Age: Adult</p>
+                    <button class="adopt-button" onclick="openAdoptModal('sunny')">Adopt Me</button>
+                </div>
+            </div>
+             
+    
+            <!-- More Pet Cards can be added here -->
+        </div>
+    </section>
+    <img class="divider" src="images/divider.png" alt="divider image">
+   
+<!-- Adopt Modal -->
+<div id="adopt-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('adopt-modal')">&times;</span>
+        <h2>Adopt Pet</h2>
+        <p id="pet-breed">Breed: </p>
+        <p id="pet-age">Age: </p>
+        <form id="adopt-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Why do you want to adopt this pet?" required></textarea>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div id="login-modal" class="modal" action="login.jsp" method="post">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('login-modal')">&times;</span>
+        <h2>Login</h2>
+        <form>
+            <input type="email" placeholder="Email"  name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signup-modal" class="modal"  action="signup.jsp" method="post">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('signup-modal')">&times;</span>
+        <h2>Sign Up</h2>
+        <form>
+            <input type="text" placeholder="Full Name" name="username"  required>
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password"  name="password">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+    
+<!--adoption process cards-->
+    <section id="adoption-process" class="page-section">
+        <h2>How to Adopt a Pet</h2>
+        <p>Follow these easy steps to bring your new best friend home!</p>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-icon">
+                    <img src="images/browse.png" alt="Browse Pets">
+                </div>
+                <h3>Browse Pets</h3>
+                <p>Explore a wide variety of pets available for adoption. Find the one that matches your lifestyle.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="images/form.png" alt="Fill Out Adoption Form">
+                </div>
+                <h3>Fill Out Adoption Form</h3>
+                <p>Complete an adoption application to provide us with your information and preferences.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="images/meet.png" alt="Meet & Greet">
+                </div>
+                <h3>Meet & Greet</h3>
+                <p>Meet your potential pet and spend time together to see if it’s the right match.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="images/adopt.png" alt="Adopt & Bring Them Home">
+                </div>
+                <h3>Adopt & Bring Them Home</h3>
+                <p>Once approved, complete the adoption process and take your new friend home!</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="images/aftercare.png" alt="Post-Adoption Care">
+                </div>
+                <h3>Post-Adoption Care</h3>
+                <p>We’ll guide you on how to care for your new pet and ensure they adjust well to their new home.</p>
+            </div>
+        </div>
+    </section>
+    <img class="divider" src="images/divider1.png" alt="divider image">
+   
+    
+
+<!--apply for adoption form-->
+<section id="apply" class="page-section">
+    <div class="container">
+        <h2>Apply for Adoption</h2>
+        <p>Fill out the form below to apply for adopting a pet. We will review your application and get back to you as soon as possible.</p>
+        <form id="adopt-form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Why do you want to adopt this pet?</label>
+                <textarea id="reason" placeholder="Please tell us why you want to adopt this pet" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Enter your address" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </div>
+        </form>
+    </div>
+</section>    
+
+<!--testimonials section-->
+    <section id="testimonials" class="page-section">
+        <h2>What Our Adopters Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <img src="images/testimonial1.jpg" alt="John Doe" class="testimonial-img">
+                <p class="testimonial-text">"Adopting Bella was the best decision I've ever made. She brings so much joy to my life!"</p>
+                <h4 class="testimonial-name">John Doe</h4>
+                <p class="testimonial-pet">Adopted: Bella (Dog)</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/testimonial2.jpg" alt="Jane Smith" class="testimonial-img">
+                <p class="testimonial-text">"We are so happy with our new furry friend, Max! Thank you Pet Adoption!"</p>
+                <h4 class="testimonial-name">Jane Smith</h4>
+                <p class="testimonial-pet">Adopted: Max (Cat)</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/testimonial3.jpg" alt="Michael Lee" class="testimonial-img">
+                <p class="testimonial-text">"The process was smooth, and now our family is complete with Rocky, our lovable dog!"</p>
+                <h4 class="testimonial-name">Michael Lee</h4>
+                <p class="testimonial-pet">Adopted: Rocky (Dog)</p>
+            </div>
+        </div>
+    </section>
+    
+    <!--team members-->
+    <section id="about" class="page-section">
+        <h2>About Us</h2>
+        <p>We are a dedicated team passionate about connecting pets with loving families. Our mission is to give every pet a loving home.</p>
+        <div class="about-content">
+            <div class="team-member">
+                <img src="images/face1.jpg" alt="Team Member 1" class="team-img">
+                <h3>Prathik Arora</h3>
+                <p>Founder & CEO</p>
+                <p>"I'm dedicated to making sure every pet finds their forever home."</p>
+            </div>
+            <div class="team-member">
+                <img src="images/face2.jpg" alt="Team Member 2" class="team-img">
+                <h3>Jenny Winget</h3>
+                <p>Adoption Coordinator</p>
+                <p>"Helping people find the perfect pet is my passion."</p>
+            </div>
+            <div class="team-member">
+                <img src="images/face3.jpg" alt="Team Member 3" class="team-img">
+                <h3>Harshad Chopda</h3>
+                <p>Veterinarian</p>
+                <p>"Ensuring the health and happiness of pets is my priority."</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+<!--faq section-->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="question">How can I adopt a pet?</h3>
+                <p class="answer">To adopt a pet, browse through our pet listings and click on "Adopt Me" for your desired pet. Fill out the adoption application, and our team will review your details and get in touch with you.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">What is the adoption fee?</h3>
+                <p class="answer">The adoption fee varies depending on the pet. It helps cover the cost of care, food, and medical treatments for the pet. You can view the fee details on the pet's profile page.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Can I adopt a pet if I live in an apartment?</h3>
+                <p class="answer">Yes, you can adopt a pet if you live in an apartment, as long as you ensure that the pet will be comfortable and safe in your living situation. We will review the pet's specific needs before approval.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">How long does the adoption process take?</h3>
+                <p class="answer">The adoption process typically takes 1-2 weeks, depending on the pet and the adoption requirements. We aim to make the process as quick and easy as possible while ensuring the best match for both the pet and the adopter.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Can I return a pet after adoption?</h3>
+                <p class="answer">We encourage potential adopters to consider carefully before adopting. However, if the adoption does not work out, we ask that you contact us immediately, and we will discuss the next steps to ensure the pet's well-being.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+<!--contact form section-->
+    <section id="contact" class="page-section">
+        <div class="contact-header">
+            <h2>Contact Us</h2>
+            <p>We are here to answer any questions you may have. Feel free to reach out to us!</p>
+        </div>
+        
+        <div class="contact-container">
+            <!-- Left Column: Contact Form -->
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+    
+            <!-- Right Column: Contact Information -->
+            <div class="contact-info">
+                <h3>Our Office</h3>
+                <p><strong>Email:</strong> support@petadoption.com</p>
+                <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+                <p><strong>Address:</strong> 123 Pet Adoption Lane, Pet City, Country</p>
+            </div>
+        </div>
+    </section>
+
+<!--event section-->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <p>Join our events to support animal welfare and make a difference.</p>
+            <div class="event-cards-scroll">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <h3>Adoption Drive</h3>
+                    <p>Date: February 10, 2025</p>
+                    <p>Location: Central Park</p>
+                    <p>Description: A day to find loving homes for our pets. Come and meet your furry friend!</p>
+                </div>
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <h3>Fundraiser Gala</h3>
+                    <p>Date: March 15, 2025</p>
+                    <p>Location: Grand Hotel</p>
+                    <p>Description: An evening of dining and entertainment to raise funds for animal welfare.</p>
+                </div>
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <h3>Pet Health Camp</h3>
+                    <p>Date: April 8, 2025</p>
+                    <p>Location: City Clinic</p>
+                    <p>Description: Free health check-ups and vaccinations for pets.</p>
+                </div>
+                <!-- Event Card 4 -->
+                <div class="event-card">
+                    <h3>Volunteer Meetup</h3>
+                    <p>Date: May 20, 2025</p>
+                    <p>Location: Community Hall</p>
+                    <p>Description: Meet like-minded individuals and learn how you can contribute to animal care.</p>
+                </div>
+                <!-- Event Card 5 -->
+                <div class="event-card">
+                    <h3>Pet Walkathon</h3>
+                    <p>Date: June 5, 2025</p>
+                    <p>Location: Riverside Park</p>
+                    <p>Description: Bring your pets for a fun walkathon to promote pet fitness and awareness.</p>
+                </div>
+                <!-- Event Card 6 -->
+                <div class="event-card">
+                    <h3>Animal Awareness Workshop</h3>
+                    <p>Date: July 12, 2025</p>
+                    <p>Location: Public Library</p>
+                    <p>Description: Learn about animal rights and welfare from experts in the field.</p>
+                </div>
+                <!-- Event Card 7 -->
+                <div class="event-card">
+                    <h3>Community Adoption Fair</h3>
+                    <p>Date: August 18, 2025</p>
+                    <p>Location: Green Valley Grounds</p>
+                    <p>Description: A fair where local shelters showcase animals available for adoption.</p>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+    
+    
+    
+<!--gallary section-->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2>Past Event Gallery</h2>
+            <p>Browse through the highlights of our past events.</p>
+            <div class="gallery-wrapper">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="images/event1.jpg" alt="Event 1" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">Charity Walk</div>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="images/event2.jpg" alt="Event 2" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text"> Animal Adoption Drive</div>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="images/event3.jpg" alt="Event 3" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text"> Pet Care Workshop</div>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="images/event4.jpg" alt="Event 4" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text"> Donation Collection</div>
+                    </div>
+                </div>
+                            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="images/event5.jpg" alt="Event 5" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Pet Adoption Success</div>
+                </div>
+            </div>
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="images/event6.jpg" alt="Event 6" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Volunteer Meet-up</div>
+                </div>
+            </div>
+            <!-- Gallery Item 7 -->
+            <div class="gallery-item">
+                <img src="images/event7.jpg" alt="Event 7" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Fundraising Dinner</div>
+                </div>
+            </div>
+            <!-- Gallery Item 8 -->
+            <div class="gallery-item">
+                <img src="images/event8.jpg" alt="Event 8" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Shelter Renovation</div>
+                </div>
+            </div>
+            <!-- Gallery Item 9 -->
+            <div class="gallery-item">
+                <img src="images/event9.jpg" alt="Event 9" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Awareness Campaign</div>
+                </div>
+            </div>
+            <!-- Gallery Item 10 -->
+            <div class="gallery-item">
+                <img src="images/event10.jpg" alt="Event 10" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Pet Fashion Show</div>
+                </div>
+            </div>
+            <!-- Gallery Item 11 -->
+            <div class="gallery-item">
+                <img src="images/event11.jpg" alt="Event 11" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Community Awareness</div>
+                </div>
+            </div>
+            <!-- Gallery Item 12 -->
+            <div class="gallery-item">
+                <img src="images/event12.jpg" alt="Event 12" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Adopt a Senior Pet</div>
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    </section>
+        
+    
+    
+
+   
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 Pet Adoption. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><img src="images/facebook.png" alt="Facebook" /></a>
+                <a href="#" class="social-icon"><img src="images/twitter.png" alt="Twitter" /></a>
+                <a href="#" class="social-icon"><img src="images/instagram.png" alt="Instagram" /></a>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+<%
+    String user = (String) session.getAttribute("user");
+
+    if (user == null) {
+        response.sendRedirect("index.html"); // Redirect to login page
+    }
+%>
+<h2>Welcome, <%= user %>!</h2>
+<a href="logout.jsp">Logout</a>

@@ -1,0 +1,137 @@
+/* General Styles for the Pet Details Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url(images/pattern4.png);
+}
+
+/* Header - Keep it the same as on the index page */
+header {
+    background-color: #6d4c03;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 15px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header nav button {
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+
+
+
+/* Pet Info */
+.pet-info {
+    text-align: center;
+}
+
+
+
+
+
+/* Transparent Pet Details Section */
+.pet-details {
+    width: 90%;
+    max-width: 700px;
+    margin: 150px auto 20px auto; /* Margin-top for space between navbar and content */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* White background with 70% opacity */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Light shadow for better visibility */
+    backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the container */
+  
+}
+
+/* Image Styling for Pet Details */
+.pet-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Adjust text in pet details */
+.pet-details h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pet-details p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Back Button Styling */
+.back-button {
+    display: inline-block;
+    background-color: #6d4c03;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #5a3a00;
+}
+
+/* Contact Button Styling */
+.contact-owner {
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-owner:hover {
+    background-color: #e85b50;
+}

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+      
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+      /* Announcement Bar Style */
+.announcement-bar {
+    background-color:  #ffcc00;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    position: fixed;
+    top: 60px; /* Navbar ke neeche dikhane ke liye */
+    z-index: 999; /* Ensure it stays above content */
+}
+.modal button{
+    width: 100%;
+    padding: 5px;
+    background-color: #b18017;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Ensure Page Content Starts After Announcement */
+body {
+    padding-top: 100px; /* Navbar (60px) + Announcement (40px) */
+}
+
+
+    </style>
+     <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  
+   
+
+    <header>
+        <nav>
+            <ul>
+              
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#pet-listing" class="nav-link">Browse Pets</a></li>
+                <li><a href="#apply" class="nav-link"> Volunteer</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#gallery" class="nav-link">Gallary</a></li>
+                <li><a href="adopt.html">How to Adopt</a></li>
+                <li><a href="sucess.html">Success Stories</a></li>
+                <li><a href="about.html" >About Us</a></li>
+                <li><a href="contactus.html" >Contact Us</a></li>
+                
+                <!-- Buttons to Open Modals -->
+                <button onclick="openModal('login-modal')">Login</button>
+                <button onclick="openModal('register-modal')">Register</button>
+    
+            </ul>
+        </nav>
+    </header>
+    <div class="announcement-bar">
+        "Sign Up or Log In to Explore Pets & Volunteer Opportunities! 🐶🐱 Spread Love, Save Lives! ❤️🐾"
+    </div>
+    
+    
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            <h2>Login</h2>
+            <input type="text" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p onclick="openModal('register-modal')">Dont you have account?Register</p>
+            <p id="login-error" style="color: red;"></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('register-modal')">&times;</span>
+            <h2>Register</h2>
+            <input type="text" id="register-name" placeholder="Full Name" required>
+            <input type="text" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button onclick="register()">Register</button>
+            <p onclick="openModal('login-modal')">ALready Have Account?login</p>
+            <p id="register-error" style="color: red;"></p>
+        </div>
+    </div>
+
+
+    
+    <!-- Home Section -->
+<section id="home" class="page-section">
+    <h2>Welcome to the PetNest🐾💖</h2>
+    <p>Your one-stop destination to find and adopt your next best friend.</p>
+    <a href="#pet-listing" class="cta-button">Browse Pets</a>
+</section>
+
+
+<!--event section-->
+<section id="events" class="events-section">
+    <div class="container">
+        <h2>Upcoming Events</h2>
+        <p>Join our events to support animal welfare and make a difference.</p>
+        <div class="event-cards-scroll">
+            <!-- Event Card 1 -->
+            <div class="event-card">
+                <h3>Adoption Drive</h3>
+                <p>Date: February 10, 2025</p>
+                <p>Location: Central Park</p>
+                <p>Description: A day to find loving homes for our pets. Come and meet your furry friend!</p>
+            </div>
+            <!-- Event Card 2 -->
+            <div class="event-card">
+                <h3>Fundraiser Gala</h3>
+                <p>Date: March 15, 2025</p>
+                <p>Location: Grand Hotel</p>
+                <p>Description: An evening of dining and entertainment to raise funds for animal welfare.</p>
+            </div>
+            <!-- Event Card 3 -->
+            <div class="event-card">
+                <h3>Pet Health Camp</h3>
+                <p>Date: April 8, 2025</p>
+                <p>Location: City Clinic</p>
+                <p>Description: Free health check-ups and vaccinations for pets.</p>
+            </div>
+            <!-- Event Card 4 -->
+            <div class="event-card">
+                <h3>Volunteer Meetup</h3>
+                <p>Date: May 20, 2025</p>
+                <p>Location: Community Hall</p>
+                <p>Description: Meet like-minded individuals and learn how you can contribute to animal care.</p>
+            </div>
+            <!-- Event Card 5 -->
+            <div class="event-card">
+                <h3>Pet Walkathon</h3>
+                <p>Date: June 5, 2025</p>
+                <p>Location: Riverside Park</p>
+                <p>Description: Bring your pets for a fun walkathon to promote pet fitness and awareness.</p>
+            </div>
+            <!-- Event Card 6 -->
+            <div class="event-card">
+                <h3>Animal Awareness Workshop</h3>
+                <p>Date: July 12, 2025</p>
+                <p>Location: Public Library</p>
+                <p>Description: Learn about animal rights and welfare from experts in the field.</p>
+            </div>
+            <!-- Event Card 7 -->
+            <div class="event-card">
+                <h3>Community Adoption Fair</h3>
+                <p>Date: August 18, 2025</p>
+                <p>Location: Green Valley Grounds</p>
+                <p>Description: A fair where local shelters showcase animals available for adoption.</p>
+            </div>
+            
+        </div>
+    </div>
+    
+</section>
+
+
+
+<!--gallary section-->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2>Past Event Gallery</h2>
+        <p>Browse through the highlights of our past events.</p>
+        <div class="gallery-wrapper">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="images/event1.jpg" alt="Event 1" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text">Charity Walk</div>
+                </div>
+            </div>
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="images/event2.jpg" alt="Event 2" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Animal Adoption Drive</div>
+                </div>
+            </div>
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="images/event3.jpg" alt="Event 3" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Pet Care Workshop</div>
+                </div>
+            </div>
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="images/event4.jpg" alt="Event 4" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="overlay-text"> Donation Collection</div>
+                </div>
+            </div>
+                        <!-- Gallery Item 5 -->
+        <div class="gallery-item">
+            <img src="images/event5.jpg" alt="Event 5" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Pet Adoption Success</div>
+            </div>
+        </div>
+        <!-- Gallery Item 6 -->
+        <div class="gallery-item">
+            <img src="images/event6.jpg" alt="Event 6" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Volunteer Meet-up</div>
+            </div>
+        </div>
+        <!-- Gallery Item 7 -->
+        <div class="gallery-item">
+            <img src="images/event7.jpg" alt="Event 7" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Fundraising Dinner</div>
+            </div>
+        </div>
+        <!-- Gallery Item 8 -->
+        <div class="gallery-item">
+            <img src="images/event8.jpg" alt="Event 8" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Shelter Renovation</div>
+            </div>
+        </div>
+        <!-- Gallery Item 9 -->
+        <div class="gallery-item">
+            <img src="images/event9.jpg" alt="Event 9" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Awareness Campaign</div>
+            </div>
+        </div>
+        <!-- Gallery Item 10 -->
+        <div class="gallery-item">
+            <img src="images/event10.jpg" alt="Event 10" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Pet Fashion Show</div>
+            </div>
+        </div>
+        <!-- Gallery Item 11 -->
+        <div class="gallery-item">
+            <img src="images/event11.jpg" alt="Event 11" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Community Awareness</div>
+            </div>
+        </div>
+        <!-- Gallery Item 12 -->
+        <div class="gallery-item">
+            <img src="images/event12.jpg" alt="Event 12" class="gallery-img">
+            <div class="gallery-overlay">
+                <div class="overlay-text"> Adopt a Senior Pet</div>
+            </div>
+        </div>
+    
+        </div>
+    </div>
+</section>
+    
+<!-- AI Assistant -->
+<div id="ai-assistant">
+
+    <!-- Floating Button -->
+    <button id="ai-toggle" onclick="toggleAI()">
+        🐾
+    </button>
+
+    <!-- Chat Box -->
+    <div id="ai-chatbox">
+
+        <div id="ai-header">
+            <span>🐾 PetNest Assistant</span>
+            <button onclick="toggleAI()">×</button>
+        </div>
+
+        <div id="ai-messages">
+            <div class="ai-message bot">
+                👋 Hi! I'm PetNest Assistant.<br>
+                How can I help you?
+            </div>
+        </div>
+
+        <div id="ai-input-area">
+
+            <input
+                type="text"
+                id="ai-input"
+                placeholder="Ask me something..."
+            >
+
+            <button onclick="sendAIMessage()">➤</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<footer id="footer">
+    <div class="container">
+        <p>&copy; 2025 PetNest. All rights reserved. Made with ❤️ by Payal  </p>
+       
+    </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        function login() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            fetch('login.jsp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `email=${email}&password=${password}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.trim() === 'success') {
+                    alert('Login successful!');
+                    closeModal('login-modal');
+                    window.location.href = 'dashboard.jsp';
+                } else {
+                    document.getElementById('login-error').innerText = 'Invalid email or password!';
+                }
+            });
+        }
+
+        function register() {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+
+            fetch('register.jsp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `name=${name}&email=${email}&password=${password}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.trim() === 'success') {
+                    alert('Registration successful! Please login.');
+                    closeModal('register-modal');
+                } else {
+                    document.getElementById('register-error').innerText = 'Error registering user!';
+                }
+            });
+        }
+    </script>
+    <script src="js/ai-assistant.js"></script>
+</body>
+</html>

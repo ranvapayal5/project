@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Success Stories</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding-top: 80px;
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            background-color: #6d4c03;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* Success Stories Section */
+        h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .story-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .story {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+        .story img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .story-content {
+            flex: 1;
+        }
+        .story-content h3 {
+            margin: 10px 0;
+            color: #222;
+            font-size: 2em;
+        }
+        .story-content p {
+            font-size: 20px;
+            color: #555;
+            line-height: 2;
+            text-align: justify;
+        }
+        .adopter {
+            font-weight: bold;
+            margin-top: 15px;
+            color: #444;
+            font-size: 1.3em;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #6d4c03;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dashboard.jsp#home" class="nav-link">Home</a></li>
+                <li><a href="dashboard.jsp#pet-listing" class="nav-link">Browse Pets</a></li>
+                <li><a href="dashboard.jsp#apply" class="nav-link"> Volunteer</a></li>
+                <li><a href="dashboard.jsp#events" class="nav-link">Events</a></li>
+                <li><a href="dashboard.jsp#gallery" class="nav-link">Gallary</a></li>
+                <li><a href="adopt.html">How to Adopt</a></li>
+                <li><a href="sucess.html">Success Stories</a></li>
+                <li><a href="about.html" >About Us</a></li>
+                <li><a href="contactus.html" >Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <h2>Heartwarming Adoption Stories</h2>
+    <div class="story-container" id="story-container"></div>
+    
+    <script>
+        const stories = [
+
+            { adopter: "Rohit Alhuja", pet_name: "Bella", pet_type: "Dog", story: "When I first saw Bella at the shelter, I knew she was meant to be part of my life. She was a shy little pup, hesitant to approach strangers, but the moment she wagged her tail at me, I felt an instant connection. Bringing Bella home was the best decision I've ever made. She has filled my days with joy, laughter, and unconditional love. She loves her evening walks, enjoys playing fetch in the park, and has the cutest way of resting her head on my lap when she's sleepy. Bella is not just a pet; she's family.", image: "images/sucess1.jpg" },
+
+            { adopter: "Emily Smith", pet_name: "Luna", pet_type: "Cat", story: "Luna was found as a stray, scared and hungry. The moment I saw her big, curious eyes staring up at me, I knew I had to take her home. Over time, she blossomed into the most affectionate and playful cat I’ve ever known. She loves chasing laser pointers, curling up on my lap while I read, and greeting me at the door after a long day. Adopting Luna has brought so much warmth and happiness into my life. I can't imagine my home without her!", image: "images/sucess2.jpg" },
+
+            { adopter: "Rhea Sharma", pet_name: "Rio", pet_type: "Parrot", story: "When I adopted Rio, I had no idea how much he would change my life. Every morning, he greets me with a cheerful ‘Good morning!’ and throughout the day, he keeps me entertained with his funny mimicry. He loves sitting on my shoulder while I work and enjoys singing along to music. His vibrant personality and loving nature make every day brighter. He may have come from a rescue shelter, but in truth, he rescued me with his endless joy and companionship.", image: "images/sucess3.jpg" },
+
+            { adopter: "Sophia Wilson", pet_name: "Charlie", pet_type: "Cat", story: "Charlie came into my life when I needed a friend the most. From the moment he stepped into my home, he claimed every corner as his own. He loves sitting by the window, watching the world go by, and curling up beside me at night. His gentle purring is the most comforting sound. He has brought so much love and happiness into my life, and I am grateful every day for the companionship he gives me.", image: "images/sucess5.jpg" },
+
+            { adopter: "Gracy Oberoi", pet_name: "Rocky", pet_type: "Dog", story: "Rocky is not just my pet; he’s my adventure buddy! Whether it’s hiking through the mountains, running on the beach, or simply playing in the backyard, he’s always ready for an adventure. He has a heart full of love and an endless supply of energy. I adopted him when he was just a pup, and watching him grow into the loving and loyal dog he is today has been the most rewarding experience. Rocky has made my life so much more exciting and fulfilling!", image: "images/sucess4.jpg" },
+
+            { adopter: "Jessica Kohli", pet_name: "Milo", pet_type: "Parrot", story: "Milo is the most entertaining companion I could have ever asked for. When I first brought him home, he was shy and quiet, but now he fills my house with laughter. He loves mimicking my voice, whistling songs, and even calling my name when he wants attention. He has taught me patience, responsibility, and the beauty of companionship. He’s more than a pet—he’s my feathered best friend!", image: "images/sucess6.jpg" },
+
+            { adopter: "Rose Pectus", pet_name: "Whiskers", pet_type: "Cat", story: "Whiskers is a little ball of energy! He loves playing hide-and-seek, stealing my socks, and following me everywhere. I never expected a cat to be so affectionate, but Whiskers has proven me wrong. Whether I’m watching TV, working on my laptop, or just relaxing, he’s always by my side. His playful nature and loving heart have turned every day into a joyful experience. He is truly my best friend!", image: "images/sucess7.jpg" }
+            
+        ];
+        
+        const container = document.getElementById("story-container");
+        
+        stories.forEach(story => {
+            const storyElement = document.createElement("div");
+            storyElement.classList.add("story");
+            storyElement.innerHTML = `
+                <img src="${story.image}" alt="${story.pet_name}">
+                <div class="story-content">
+                    <h3>Adopted: ${story.pet_name} (${story.pet_type})</h3>
+                    <p>"${story.story}"</p>
+                    <div class="adopter">- ${story.adopter}</div>
+                </div>
+            `;
+            container.appendChild(storyElement);
+        });
+    </script>
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 PetNest. All rights reserved. Made with ❤️ by Payal & Avani </p>
+           
+        </div>
+    </footer>
+</body>
+</html>
